@@ -1,8 +1,9 @@
-# Polaris GEM e2 System Identification and MPC Operations Manual
+# Polaris GEM e2 System Identification and MPC Operations
 
 **System Identification, Learned-Dynamics MPC, and CSV Path Tracking**
 
-> Environment: Ubuntu 20.04 | ROS Noetic | Gazebo 11 | Python 3.8.10
+> Minimum Hardware requirements:
+> Software Environment: Ubuntu 20.04 | ROS Noetic | Gazebo 11 | Python 3.8.10
 
 # Contents
 
