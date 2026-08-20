@@ -2,7 +2,7 @@
 
 **System Identification, Learned-Dynamics MPC, and CSV Path Tracking**
 
-> Minimum Hardware requirements:  
+> Minimum Hardware requirements:    
 > Recommended Software Environment: Ubuntu 20.04 | ROS Noetic | Gazebo 11 | Python 3.8.10
 
 # Contents
