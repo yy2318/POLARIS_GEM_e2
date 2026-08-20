@@ -1,0 +1,7 @@
+{
+  "samples": 37525,
+  "runs": 36,
+  "train": 27020,
+  "validation": 4905,
+  "test": 5600
+}

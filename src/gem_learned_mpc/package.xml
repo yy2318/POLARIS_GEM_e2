@@ -1,0 +1,2 @@
+<?xml version="1.0"?>
+<package format="2"><name>gem_learned_mpc</name><version>0.1.0</version><description>GEM system identification tools</description><maintainer email="yy@example.com">yy</maintainer><license>BSD</license><buildtool_depend>catkin</buildtool_depend><build_depend>message_generation</build_depend><depend>rospy</depend><depend>std_msgs</depend><depend>geometry_msgs</depend><depend>nav_msgs</depend><depend>sensor_msgs</depend><depend>gazebo_msgs</depend><depend>ackermann_msgs</depend><depend>tf</depend><exec_depend>message_runtime</exec_depend></package>

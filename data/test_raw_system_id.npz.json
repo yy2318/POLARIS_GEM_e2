@@ -1,0 +1,45 @@
+{
+  "state_columns": [
+    "run",
+    "time",
+    "x",
+    "y",
+    "yaw",
+    "vx",
+    "vy",
+    "yaw_rate",
+    "steering_angle"
+  ],
+  "command_columns": [
+    "run",
+    "time",
+    "speed_cmd",
+    "steering_cmd"
+  ],
+  "model_name": "gem_e2",
+  "preferred_state_topic": "/system_id/vehicle_state",
+  "gazebo_state_topic": "/gazebo/model_states",
+  "joint_state_topic": "/joint_states",
+  "command_topic": "/ackermann_cmd",
+  "steering_joints": [],
+  "steering_fallback": "latest command when joint feedback is unavailable",
+  "runs": [
+    {
+      "run": 0,
+      "bag": "/home/ll/gem_ws/bags/prbs_20260817_212847_0.bag",
+      "state_source": "gazebo_model_states",
+      "state_samples": 158020,
+      "command_samples": 2953,
+      "joint_feedback_used": false,
+      "missing_model_messages": 0
+    }
+  ],
+  "state_shape": [
+    158020,
+    9
+  ],
+  "command_shape": [
+    2953,
+    4
+  ]
+}

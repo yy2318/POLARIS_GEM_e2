@@ -1,0 +1,360 @@
+{
+  "state_columns": [
+    "run",
+    "time",
+    "x",
+    "y",
+    "yaw",
+    "vx",
+    "vy",
+    "yaw_rate",
+    "steering_angle"
+  ],
+  "command_columns": [
+    "run",
+    "time",
+    "speed_cmd",
+    "steering_cmd"
+  ],
+  "model_name": "gem_e2",
+  "preferred_state_topic": "/system_id/vehicle_state",
+  "gazebo_state_topic": "/gazebo/model_states",
+  "joint_state_topic": "/joint_states",
+  "command_topic": "/ackermann_cmd",
+  "steering_joints": [],
+  "steering_fallback": "latest command when joint feedback is unavailable",
+  "runs": [
+    {
+      "run": 0,
+      "bag": "/home/ll/gem_ws/bags/brake_20260816_162527_0.bag",
+      "state_source": "gazebo_model_states",
+      "state_samples": 84792,
+      "command_samples": 1468,
+      "joint_feedback_used": false,
+      "missing_model_messages": 0
+    },
+    {
+      "run": 1,
+      "bag": "/home/ll/gem_ws/bags/brake_20260816_162943_0.bag",
+      "state_source": "gazebo_model_states",
+      "state_samples": 73968,
+      "command_samples": 1258,
+      "joint_feedback_used": false,
+      "missing_model_messages": 0
+    },
+    {
+      "run": 2,
+      "bag": "/home/ll/gem_ws/bags/brake_20260816_163517_0.bag",
+      "state_source": "gazebo_model_states",
+      "state_samples": 88857,
+      "command_samples": 1539,
+      "joint_feedback_used": false,
+      "missing_model_messages": 0
+    },
+    {
+      "run": 3,
+      "bag": "/home/ll/gem_ws/bags/brake_20260816_163852_0.bag",
+      "state_source": "gazebo_model_states",
+      "state_samples": 65318,
+      "command_samples": 1093,
+      "joint_feedback_used": false,
+      "missing_model_messages": 0
+    },
+    {
+      "run": 4,
+      "bag": "/home/ll/gem_ws/bags/brake_20260816_164640_0.bag",
+      "state_source": "gazebo_model_states",
+      "state_samples": 61273,
+      "command_samples": 1048,
+      "joint_feedback_used": false,
+      "missing_model_messages": 0
+    },
+    {
+      "run": 5,
+      "bag": "/home/ll/gem_ws/bags/brake_20260816_165210_0.bag",
+      "state_source": "gazebo_model_states",
+      "state_samples": 68867,
+      "command_samples": 1223,
+      "joint_feedback_used": false,
+      "missing_model_messages": 0
+    },
+    {
+      "run": 6,
+      "bag": "/home/ll/gem_ws/bags/brake_20260816_165525_0.bag",
+      "state_source": "gazebo_model_states",
+      "state_samples": 79467,
+      "command_samples": 1407,
+      "joint_feedback_used": false,
+      "missing_model_messages": 0
+    },
+    {
+      "run": 7,
+      "bag": "/home/ll/gem_ws/bags/brake_20260816_165852_0.bag",
+      "state_source": "gazebo_model_states",
+      "state_samples": 68840,
+      "command_samples": 1190,
+      "joint_feedback_used": false,
+      "missing_model_messages": 0
+    },
+    {
+      "run": 8,
+      "bag": "/home/ll/gem_ws/bags/brake_20260816_170304_0.bag",
+      "state_source": "gazebo_model_states",
+      "state_samples": 72181,
+      "command_samples": 1270,
+      "joint_feedback_used": false,
+      "missing_model_messages": 0
+    },
+    {
+      "run": 9,
+      "bag": "/home/ll/gem_ws/bags/brake_20260816_170620_0.bag",
+      "state_source": "gazebo_model_states",
+      "state_samples": 71247,
+      "command_samples": 1226,
+      "joint_feedback_used": false,
+      "missing_model_messages": 0
+    },
+    {
+      "run": 10,
+      "bag": "/home/ll/gem_ws/bags/lateral_step_v1p5_Nd0p05_20260816_173348_0.bag",
+      "state_source": "gazebo_model_states",
+      "state_samples": 19395,
+      "command_samples": 239,
+      "joint_feedback_used": false,
+      "missing_model_messages": 0
+    },
+    {
+      "run": 11,
+      "bag": "/home/ll/gem_ws/bags/lateral_step_v1p5_Pd0p05_20260816_173028_0.bag",
+      "state_source": "gazebo_model_states",
+      "state_samples": 21372,
+      "command_samples": 265,
+      "joint_feedback_used": false,
+      "missing_model_messages": 0
+    },
+    {
+      "run": 12,
+      "bag": "/home/ll/gem_ws/bags/lateral_step_v3p0_Nd0p1_20260816_174622_0.bag",
+      "state_source": "gazebo_model_states",
+      "state_samples": 18793,
+      "command_samples": 231,
+      "joint_feedback_used": false,
+      "missing_model_messages": 0
+    },
+    {
+      "run": 13,
+      "bag": "/home/ll/gem_ws/bags/lateral_step_v3p0_Pd0p1_20260816_173749_0.bag",
+      "state_source": "gazebo_model_states",
+      "state_samples": 20144,
+      "command_samples": 234,
+      "joint_feedback_used": false,
+      "missing_model_messages": 0
+    },
+    {
+      "run": 14,
+      "bag": "/home/ll/gem_ws/bags/lateral_step_v4p5_Nd0p2_20260816_175203_0.bag",
+      "state_source": "gazebo_model_states",
+      "state_samples": 18289,
+      "command_samples": 238,
+      "joint_feedback_used": false,
+      "missing_model_messages": 0
+    },
+    {
+      "run": 15,
+      "bag": "/home/ll/gem_ws/bags/lateral_step_v4p5_Pd0p2_20260816_175010_0.bag",
+      "state_source": "gazebo_model_states",
+      "state_samples": 24639,
+      "command_samples": 343,
+      "joint_feedback_used": false,
+      "missing_model_messages": 0
+    },
+    {
+      "run": 16,
+      "bag": "/home/ll/gem_ws/bags/longitudinal_step_20260816_154440_0.bag",
+      "state_source": "gazebo_model_states",
+      "state_samples": 20907,
+      "command_samples": 347,
+      "joint_feedback_used": false,
+      "missing_model_messages": 0
+    },
+    {
+      "run": 17,
+      "bag": "/home/ll/gem_ws/bags/longitudinal_step_20260816_155113_0.bag",
+      "state_source": "gazebo_model_states",
+      "state_samples": 28389,
+      "command_samples": 352,
+      "joint_feedback_used": false,
+      "missing_model_messages": 0
+    },
+    {
+      "run": 18,
+      "bag": "/home/ll/gem_ws/bags/longitudinal_step_20260816_155343_0.bag",
+      "state_source": "gazebo_model_states",
+      "state_samples": 27318,
+      "command_samples": 361,
+      "joint_feedback_used": false,
+      "missing_model_messages": 0
+    },
+    {
+      "run": 19,
+      "bag": "/home/ll/gem_ws/bags/longitudinal_step_20260816_160037_0.bag",
+      "state_source": "gazebo_model_states",
+      "state_samples": 27667,
+      "command_samples": 341,
+      "joint_feedback_used": false,
+      "missing_model_messages": 0
+    },
+    {
+      "run": 20,
+      "bag": "/home/ll/gem_ws/bags/longitudinal_step_20260816_160306_0.bag",
+      "state_source": "gazebo_model_states",
+      "state_samples": 28421,
+      "command_samples": 369,
+      "joint_feedback_used": false,
+      "missing_model_messages": 0
+    },
+    {
+      "run": 21,
+      "bag": "/home/ll/gem_ws/bags/prbs_20260817_212847_0.bag",
+      "state_source": "gazebo_model_states",
+      "state_samples": 158020,
+      "command_samples": 2953,
+      "joint_feedback_used": false,
+      "missing_model_messages": 0
+    },
+    {
+      "run": 22,
+      "bag": "/home/ll/gem_ws/bags/prbs_20260817_213536_0.bag",
+      "state_source": "gazebo_model_states",
+      "state_samples": 158065,
+      "command_samples": 2909,
+      "joint_feedback_used": false,
+      "missing_model_messages": 0
+    },
+    {
+      "run": 23,
+      "bag": "/home/ll/gem_ws/bags/prbs_20260817_214203_0.bag",
+      "state_source": "gazebo_model_states",
+      "state_samples": 147885,
+      "command_samples": 2764,
+      "joint_feedback_used": false,
+      "missing_model_messages": 0
+    },
+    {
+      "run": 24,
+      "bag": "/home/ll/gem_ws/bags/sine_v1p5_f0p03_20260816_202946_0.bag",
+      "state_source": "gazebo_model_states",
+      "state_samples": 70681,
+      "command_samples": 1092,
+      "joint_feedback_used": false,
+      "missing_model_messages": 0
+    },
+    {
+      "run": 25,
+      "bag": "/home/ll/gem_ws/bags/sine_v1p5_f0p08_20260816_203547_0.bag",
+      "state_source": "gazebo_model_states",
+      "state_samples": 62858,
+      "command_samples": 1085,
+      "joint_feedback_used": false,
+      "missing_model_messages": 0
+    },
+    {
+      "run": 26,
+      "bag": "/home/ll/gem_ws/bags/sine_v1p5_f0p15_20260816_203933_0.bag",
+      "state_source": "gazebo_model_states",
+      "state_samples": 62932,
+      "command_samples": 1117,
+      "joint_feedback_used": false,
+      "missing_model_messages": 0
+    },
+    {
+      "run": 27,
+      "bag": "/home/ll/gem_ws/bags/sine_v1p5_f0p30_20260816_204254_0.bag",
+      "state_source": "gazebo_model_states",
+      "state_samples": 63046,
+      "command_samples": 1121,
+      "joint_feedback_used": false,
+      "missing_model_messages": 0
+    },
+    {
+      "run": 28,
+      "bag": "/home/ll/gem_ws/bags/sine_v3p0_f0p03_20260816_204844_0.bag",
+      "state_source": "gazebo_model_states",
+      "state_samples": 66269,
+      "command_samples": 1133,
+      "joint_feedback_used": false,
+      "missing_model_messages": 0
+    },
+    {
+      "run": 29,
+      "bag": "/home/ll/gem_ws/bags/sine_v3p0_f0p08_20260816_205227_0.bag",
+      "state_source": "gazebo_model_states",
+      "state_samples": 64473,
+      "command_samples": 1153,
+      "joint_feedback_used": false,
+      "missing_model_messages": 0
+    },
+    {
+      "run": 30,
+      "bag": "/home/ll/gem_ws/bags/sine_v3p0_f0p15_20260816_205922_0.bag",
+      "state_source": "gazebo_model_states",
+      "state_samples": 64835,
+      "command_samples": 1145,
+      "joint_feedback_used": false,
+      "missing_model_messages": 0
+    },
+    {
+      "run": 31,
+      "bag": "/home/ll/gem_ws/bags/sine_v3p0_f0p30_20260816_210312_0.bag",
+      "state_source": "gazebo_model_states",
+      "state_samples": 63636,
+      "command_samples": 1139,
+      "joint_feedback_used": false,
+      "missing_model_messages": 0
+    },
+    {
+      "run": 32,
+      "bag": "/home/ll/gem_ws/bags/sine_v4p5_f0p03_20260816_210936_0.bag",
+      "state_source": "gazebo_model_states",
+      "state_samples": 64782,
+      "command_samples": 1149,
+      "joint_feedback_used": false,
+      "missing_model_messages": 0
+    },
+    {
+      "run": 33,
+      "bag": "/home/ll/gem_ws/bags/sine_v4p5_f0p08_20260816_211259_0.bag",
+      "state_source": "gazebo_model_states",
+      "state_samples": 81633,
+      "command_samples": 1481,
+      "joint_feedback_used": false,
+      "missing_model_messages": 0
+    },
+    {
+      "run": 34,
+      "bag": "/home/ll/gem_ws/bags/sine_v4p5_f0p15_20260816_211633_0.bag",
+      "state_source": "gazebo_model_states",
+      "state_samples": 62410,
+      "command_samples": 1105,
+      "joint_feedback_used": false,
+      "missing_model_messages": 0
+    },
+    {
+      "run": 35,
+      "bag": "/home/ll/gem_ws/bags/static_bias_20260816_151825_0.bag",
+      "state_source": "gazebo_model_states",
+      "state_samples": 28574,
+      "command_samples": 785,
+      "joint_feedback_used": false,
+      "missing_model_messages": 0
+    }
+  ],
+  "state_shape": [
+    2210243,
+    9
+  ],
+  "command_shape": [
+    38173,
+    4
+  ]
+}
