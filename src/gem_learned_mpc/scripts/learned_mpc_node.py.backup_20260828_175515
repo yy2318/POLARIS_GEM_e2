@@ -1,0 +1,13 @@
+#!/usr/bin/env python3
+import rospy,yaml,numpy as np
+from gem_learned_mpc.msg import VehicleState,ControlCommand,MPCStatus
+from gem_learned_mpc.path_geometry import load_waypoints,preprocess,nearest_index,speed_profile,frenet_error
+from gem_learned_mpc.mpc_solver import Solver
+from std_msgs.msg import Float64
+class N:
+ def __init__(self):
+  self.c=yaml.safe_load(open(rospy.get_param('~config')));self.p=preprocess(load_waypoints(rospy.get_param('~waypoint_file')));self.v=speed_profile(self.p['kappa'],vmax=self.c['limits']['speed_max']);self.sol=Solver(self.c,rospy.get_param('~model_json',''));self.i=None;self.pub=rospy.Publisher('~control',ControlCommand,queue_size=1);self.sp=rospy.Publisher('~status',MPCStatus,queue_size=1);rospy.Subscriber('~state',VehicleState,self.cb,queue_size=1)
+ def cb(self,s):
+  if not s.valid:return
+  x=np.array([s.x,s.y,s.yaw,s.vx,s.vy,s.yaw_rate,s.steering_angle,s.longitudinal_acceleration]);self.i=nearest_index(self.p,s.x,s.y,self.i);ids=np.clip(np.arange(self.i,self.i+self.c['horizon']),0,len(self.p['x'])-1);ref=np.c_[self.p['x'][ids],self.p['y'][ids],self.p['yaw'][ids],self.v[ids]];u,st,ms=self.sol.solve(x,ref);o=ControlCommand();o.header.stamp=rospy.Time.now();o.steering_angle=float(u[0]);o.longitudinal_acceleration=float(u[1]);o.desired_speed=float(ref[0,3]);o.enable=True;self.pub.publish(o);ey,_,ep=frenet_error(s.x,s.y,s.yaw,*ref[0,:3]);q=MPCStatus();q.header=o.header;q.solver_status=st;q.solve_time_ms=ms;q.cross_track_error=ey;q.heading_error=ep;q.reference_speed=ref[0,3];q.nearest_path_index=self.i;q.fallback_active=st!='SOLVED';self.sp.publish(q)
+rospy.init_node('learned_mpc_node');N();rospy.spin()

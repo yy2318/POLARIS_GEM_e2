@@ -1,0 +1,12 @@
+state_topic: /gem_learned_mpc/state
+control_topic: /gem_learned_mpc/control_cmd
+status_topic: /gem_learned_mpc/status
+scenario_speed_topic: /gem_learned_mpc/scenario_target_speed
+fault_active_topic: /gem_learned_mpc/fault_active
+fault_type_topic: /gem_learned_mpc/fault_type
+state_timeout_s: 0.25
+safe_deceleration: -1.0
+safe_steering_angle: 0.0
+recovery_hold_s: 0.5
+control_rate_hz: 10.0
+speed_hard_limit_mps: 5.5556

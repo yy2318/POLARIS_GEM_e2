@@ -1,0 +1,25 @@
+<launch>
+  <arg name="waypoint_file" default="$(find gem_learned_mpc)/waypoints/wps.csv"/>
+  <arg name="mpc_config" default="$(find gem_learned_mpc)/config/mpc.yaml"/>
+  <arg name="model_json" default=""/>
+  <arg name="state_timeout_s" default="0.25"/>
+  <arg name="safe_deceleration" default="-1.0"/>
+  <arg name="safe_steering_angle" default="0.0"/>
+  <arg name="recovery_hold_s" default="0.5"/>
+  <arg name="control_rate_hz" default="10.0"/>
+
+  <node pkg="gem_learned_mpc"
+        type="learned_mpc_node.py"
+        name="learned_mpc"
+        output="screen"
+        respawn="false">
+    <param name="config" value="$(arg mpc_config)"/>
+    <param name="waypoint_file" value="$(arg waypoint_file)"/>
+    <param name="model_json" value="$(arg model_json)"/>
+    <param name="state_timeout_s" value="$(arg state_timeout_s)"/>
+    <param name="safe_deceleration" value="$(arg safe_deceleration)"/>
+    <param name="safe_steering_angle" value="$(arg safe_steering_angle)"/>
+    <param name="recovery_hold_s" value="$(arg recovery_hold_s)"/>
+    <param name="control_rate_hz" value="$(arg control_rate_hz)"/>
+  </node>
+</launch>

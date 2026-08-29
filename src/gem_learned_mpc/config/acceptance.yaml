@@ -1,0 +1,9 @@
+speed_limit_mps: 5.5556
+speed_tolerance_mps: 0.05
+samples_within_cte_pct: 95.0
+transient_cte_max_m: 1.5
+cte_rmse_max_m: 0.50
+path_completion_min_pct: 95.0
+solver_success_min_pct: 99.0
+solver_p95_time_max_ms: 100.0
+state_timeout_s: 0.25

@@ -1,0 +1,8 @@
+std_msgs/Header header
+string solver_status
+float64 solve_time_ms
+float64 cross_track_error
+float64 heading_error
+float64 reference_speed
+int32 nearest_path_index
+bool fallback_active

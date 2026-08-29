@@ -1,0 +1,5 @@
+odom_topic: /gem/base_footprint/odom
+state_topic: /gem_learned_mpc/state
+control_topic: /gem_learned_mpc/control_cmd
+ackermann_topic: /ackermann_cmd
+frame_id: world

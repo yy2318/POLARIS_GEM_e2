@@ -1,0 +1,37 @@
+{
+  "definition": "sqrt(mean((X_pred-X_true)^2 + (Y_pred-Y_true)^2)) at rollout endpoint",
+  "model_type": "ridge",
+  "dt": 0.05,
+  "history_length": 4,
+  "stride": 5,
+  "integration": "euler",
+  "test_groups": 6,
+  "horizons": {
+    "10": {
+      "horizon_steps": 10,
+      "horizon_seconds": 0.5,
+      "windows": 1112,
+      "x_endpoint_rmse_m": 0.014588459678062092,
+      "y_endpoint_rmse_m": 0.012927171871900978,
+      "position_endpoint_rmse_m": 0.019491919566428324,
+      "position_endpoint_mae_m": 0.01490604260361706,
+      "position_endpoint_p95_m": 0.04122889040770779,
+      "position_endpoint_max_m": 0.09445334199224345,
+      "yaw_endpoint_rmse_rad": 0.010282233945402244,
+      "yaw_endpoint_rmse_deg": 0.5891286090376975
+    },
+    "20": {
+      "horizon_steps": 20,
+      "horizon_seconds": 1.0,
+      "windows": 1100,
+      "x_endpoint_rmse_m": 0.04336123621029307,
+      "y_endpoint_rmse_m": 0.04316742399833542,
+      "position_endpoint_rmse_m": 0.0611851558822636,
+      "position_endpoint_mae_m": 0.04786444853220569,
+      "position_endpoint_p95_m": 0.128559725335949,
+      "position_endpoint_max_m": 0.21747885697758823,
+      "yaw_endpoint_rmse_rad": 0.02900554548819697,
+      "yaw_endpoint_rmse_deg": 1.6618953389484132
+    }
+  }
+}

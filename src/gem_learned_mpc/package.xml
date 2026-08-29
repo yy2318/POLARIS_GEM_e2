@@ -1,2 +1,55 @@
 <?xml version="1.0"?>
-<package format="2"><name>gem_learned_mpc</name><version>0.1.0</version><description>GEM system identification tools</description><maintainer email="yy@example.com">yy</maintainer><license>BSD</license><buildtool_depend>catkin</buildtool_depend><build_depend>message_generation</build_depend><depend>rospy</depend><depend>std_msgs</depend><depend>geometry_msgs</depend><depend>nav_msgs</depend><depend>sensor_msgs</depend><depend>gazebo_msgs</depend><depend>ackermann_msgs</depend><depend>tf</depend><exec_depend>message_runtime</exec_depend></package>
+<package format="2">
+  <name>gem_learned_mpc</name>
+  <version>1.0.1</version>
+
+  <description>
+    System identification, learned vehicle dynamics, rollout validation,
+    and nonlinear model predictive control for the Polaris GEM e2 simulator.
+    Vehicle state is obtained from gazebo_msgs/ModelStates.
+  </description>
+
+  <maintainer email="ll@localhost.net">ll</maintainer>
+  <license>MIT</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <!-- Message generation -->
+  <build_depend>message_generation</build_depend>
+  <exec_depend>message_runtime</exec_depend>
+
+  <!-- Build dependencies -->
+  <build_depend>rospy</build_depend>
+  <build_depend>std_msgs</build_depend>
+  <build_depend>geometry_msgs</build_depend>
+  <build_depend>nav_msgs</build_depend>
+  <build_depend>sensor_msgs</build_depend>
+  <build_depend>visualization_msgs</build_depend>
+  <build_depend>tf</build_depend>
+  <build_depend>gazebo_msgs</build_depend>
+  <build_depend>ackermann_msgs</build_depend>
+
+  <!-- Exported build dependencies -->
+  <build_export_depend>rospy</build_export_depend>
+  <build_export_depend>std_msgs</build_export_depend>
+  <build_export_depend>geometry_msgs</build_export_depend>
+  <build_export_depend>nav_msgs</build_export_depend>
+  <build_export_depend>sensor_msgs</build_export_depend>
+  <build_export_depend>visualization_msgs</build_export_depend>
+  <build_export_depend>tf</build_export_depend>
+  <build_export_depend>gazebo_msgs</build_export_depend>
+  <build_export_depend>ackermann_msgs</build_export_depend>
+
+  <!-- Runtime dependencies -->
+  <exec_depend>rospy</exec_depend>
+  <exec_depend>std_msgs</exec_depend>
+  <exec_depend>geometry_msgs</exec_depend>
+  <exec_depend>nav_msgs</exec_depend>
+  <exec_depend>sensor_msgs</exec_depend>
+  <exec_depend>visualization_msgs</exec_depend>
+  <exec_depend>tf</exec_depend>
+  <exec_depend>gazebo_msgs</exec_depend>
+  <exec_depend>ackermann_msgs</exec_depend>
+
+  <export/>
+</package>

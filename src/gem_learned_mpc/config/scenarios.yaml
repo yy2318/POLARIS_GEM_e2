@@ -1,0 +1,8 @@
+scenarios:
+  nominal: {lateral_offset_m: 0.0, heading_offset_deg: 0.0, speed_mps: 3.0}
+  left_offset: {lateral_offset_m: 0.5, heading_offset_deg: 0.0, speed_mps: 3.0}
+  right_offset: {lateral_offset_m: -0.5, heading_offset_deg: 0.0, speed_mps: 3.0}
+  heading_error: {lateral_offset_m: 0.0, heading_offset_deg: 10.0, speed_mps: 2.0}
+  combined: {lateral_offset_m: 0.5, heading_offset_deg: -10.0, speed_mps: 2.0}
+  high_speed: {lateral_offset_m: 0.0, heading_offset_deg: 0.0, speed_mps: 5.0}
+  solver_fault: {fault_injection: true, expected_behavior: safe_deceleration}

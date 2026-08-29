@@ -1,0 +1,122 @@
+<launch>
+  <!-- Path and model configuration -->
+  <arg name="waypoint_file"
+       default="$(find gem_learned_mpc)/waypoints/wps.csv"/>
+
+  <arg name="mpc_config"
+       default="$(find gem_learned_mpc)/config/mpc.yaml"/>
+
+  <!-- Leave empty to use the analytical fallback model during pipeline tests. -->
+  <arg name="model_json" default=""/>
+
+  <!-- Gazebo state source -->
+  <arg name="model_states_topic" default="/gazebo/model_states"/>
+  <arg name="vehicle_model_name" default="gem_e2"/>
+  <arg name="world_frame" default="world"/>
+  <arg name="acceleration_filter_alpha" default="0.8"/>
+
+  <!-- Vehicle command output -->
+  <arg name="ackermann_topic" default="/ackermann_cmd"/>
+
+  <!-- Evaluation output -->
+  <arg name="cte_output_csv" default="/tmp/gem_mpc_cte.csv"/>
+
+  <!-- 1. Read the GEM model directly from /gazebo/model_states. -->
+  <node pkg="gem_learned_mpc"
+        type="state_adapter.py"
+        name="state_adapter"
+        output="screen"
+        respawn="false">
+
+    <param name="model_states_topic"
+           value="$(arg model_states_topic)"/>
+
+    <param name="model_name"
+           value="$(arg vehicle_model_name)"/>
+
+    <param name="state_topic"
+           value="/gem_learned_mpc/state"/>
+
+    <param name="frame_id"
+           value="$(arg world_frame)"/>
+
+    <param name="acceleration_filter_alpha"
+           value="$(arg acceleration_filter_alpha)"/>
+
+    <param name="use_commanded_steering_fallback"
+           value="false"/>
+  </node>
+
+  <!-- 2. Load, clean, resample and publish wps.csv. -->
+  <node pkg="gem_learned_mpc"
+        type="waypoint_server.py"
+        name="waypoint_server"
+        output="screen"
+        respawn="false">
+
+    <param name="waypoint_file"
+           value="$(arg waypoint_file)"/>
+
+    <param name="frame_id"
+           value="$(arg world_frame)"/>
+
+    <param name="ds" value="0.25"/>
+
+    <remap from="~path"
+           to="/gem_learned_mpc/reference_path"/>
+  </node>
+
+  <!-- 3. Solve the learned nonlinear MPC problem. -->
+  <node pkg="gem_learned_mpc"
+        type="learned_mpc_node.py"
+        name="learned_mpc"
+        output="screen"
+        respawn="false">
+
+    <param name="config"
+           value="$(arg mpc_config)"/>
+
+    <param name="waypoint_file"
+           value="$(arg waypoint_file)"/>
+
+    <param name="model_json"
+           value="$(arg model_json)"/>
+
+    <remap from="~state"
+           to="/gem_learned_mpc/state"/>
+
+    <remap from="~control"
+           to="/gem_learned_mpc/control_cmd"/>
+
+    <remap from="~status"
+           to="/gem_learned_mpc/status"/>
+  </node>
+
+  <!-- 4. Convert the unified MPC command to AckermannDriveStamped. -->
+  <node pkg="gem_learned_mpc"
+        type="command_adapter.py"
+        name="command_adapter"
+        output="screen"
+        respawn="false">
+
+    <param name="output_topic"
+           value="$(arg ackermann_topic)"/>
+
+    <remap from="~control"
+           to="/gem_learned_mpc/control_cmd"/>
+  </node>
+
+  <!-- 5. Record CTE, heading error and solver performance. -->
+  <node pkg="gem_learned_mpc"
+        type="cte_monitor.py"
+        name="cte_monitor"
+        output="screen"
+        respawn="false">
+
+    <param name="output_csv"
+           value="$(arg cte_output_csv)"/>
+
+    <remap from="~status"
+           to="/gem_learned_mpc/status"/>
+  </node>
+</launch>

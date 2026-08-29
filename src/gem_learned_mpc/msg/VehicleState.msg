@@ -6,4 +6,5 @@ float64 vx
 float64 vy
 float64 yaw_rate
 float64 steering_angle
+float64 longitudinal_acceleration
 bool valid

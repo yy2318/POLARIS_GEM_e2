@@ -1,0 +1,26 @@
+{
+  "pose_columns": [
+    "x",
+    "y",
+    "yaw_unwrapped"
+  ],
+  "dynamic_columns": [
+    "vx",
+    "vy",
+    "yaw_rate",
+    "steering_angle"
+  ],
+  "command_columns": [
+    "speed_cmd",
+    "steering_cmd"
+  ],
+  "split_values": {
+    "0": "train",
+    "1": "validation",
+    "2": "test"
+  },
+  "continuous_groups": 36,
+  "test_groups": 6,
+  "dt": 0.05,
+  "history": 4
+}

@@ -1,0 +1,5 @@
+dt: 0.10
+state_order: [vx, vy, yaw_rate, steering_angle, acceleration]
+control_order: [steering_command, acceleration_command]
+hidden_sizes: [64, 64]
+activation: tanh

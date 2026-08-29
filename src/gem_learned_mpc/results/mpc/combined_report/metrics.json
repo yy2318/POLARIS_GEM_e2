@@ -1,0 +1,17 @@
+{
+  "cte_mae_m": 0.5071828160280372,
+  "cte_max_m": 0.5140860924185766,
+  "cte_p95_m": 0.5133977011357719,
+  "cte_rmse_m": 0.507198637948459,
+  "fallback_count": 1019,
+  "max_speed_mps": 0.00011037144400527992,
+  "mean_solver_time_ms": 0.0,
+  "nan_or_inf_count": 0,
+  "p95_solver_time_ms": 0.0,
+  "path_completion_pct": 100.0,
+  "sample_count": 1019,
+  "samples_within_1m_pct": 100.0,
+  "solver_failure_count": 1019,
+  "solver_success_pct": 0.0,
+  "speed_limit_mps": 5.5556
+}

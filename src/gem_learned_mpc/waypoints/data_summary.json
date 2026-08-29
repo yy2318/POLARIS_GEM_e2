@@ -1,0 +1,23 @@
+{
+  "input": {
+    "rows": 3822,
+    "columns": 5,
+    "finite_rows": 3822,
+    "nonfinite_rows": 0,
+    "adjacent_lt_0_02": 656,
+    "adjacent_min_m": 3.399999999999931e-05,
+    "adjacent_median_m": 0.22941801572675347,
+    "adjacent_max_m": 0.44243052436400043,
+    "csv_speed_min_mps": 0.000762,
+    "csv_speed_max_mps": 8.225721
+  },
+  "processing": {
+    "raw_points": 3822,
+    "filtered_points": 3168,
+    "output_points": 3340,
+    "path_length_m": 834.745123095568,
+    "max_csv_speed_mps": 8.225706692900866,
+    "max_reference_speed_mps": 5.5556,
+    "max_abs_curvature_1pm": 0.041651018799141334
+  }
+}

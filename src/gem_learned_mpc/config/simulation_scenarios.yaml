@@ -1,0 +1,53 @@
+common:
+  model_states_topic: /gazebo/model_states
+  set_model_state_service: /gazebo/set_model_state
+  vehicle_model_name: gem_e2
+  reference_frame: world
+  waypoint_file: /home/ll/gem_ws/src/gem_learned_mpc/waypoints/wps.csv
+  start_waypoint_index: 0
+  test_duration_s: 180.0
+  goal_completion_pct: 95.0
+  settle_time_s: 2.0
+  state_timeout_s: 0.25
+  report_config: /home/ll/gem_ws/src/gem_learned_mpc/config/acceptance.yaml
+  results_root: /home/ll/gem_ws/src/gem_learned_mpc/results/mpc
+scenarios:
+  nominal:
+    lateral_offset_m: 0.0
+    heading_offset_deg: 0.0
+    target_speed_mps: 3.0
+    output_csv: nominal.csv
+  left_offset:
+    lateral_offset_m: 0.5
+    heading_offset_deg: 0.0
+    target_speed_mps: 3.0
+    output_csv: left_offset.csv
+  right_offset:
+    lateral_offset_m: -0.5
+    heading_offset_deg: 0.0
+    target_speed_mps: 3.0
+    output_csv: right_offset.csv
+  heading_error:
+    lateral_offset_m: 0.0
+    heading_offset_deg: 10.0
+    target_speed_mps: 2.0
+    output_csv: heading_error.csv
+  combined:
+    lateral_offset_m: 0.5
+    heading_offset_deg: -10.0
+    target_speed_mps: 2.0
+    output_csv: combined.csv
+  high_speed:
+    lateral_offset_m: 0.0
+    heading_offset_deg: 0.0
+    target_speed_mps: 5.0
+    output_csv: high_speed.csv
+  solver_fault:
+    lateral_offset_m: 0.0
+    heading_offset_deg: 0.0
+    target_speed_mps: 2.0
+    output_csv: solver_fault.csv
+    fault_type: solver_failure
+    fault_start_s: 20.0
+    fault_duration_s: 5.0
+    expected_behavior: safe_deceleration

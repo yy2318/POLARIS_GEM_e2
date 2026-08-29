@@ -1,0 +1,5 @@
+<launch>
+ <arg name="output_csv" default="$(env HOME)/gem_ws/src/gem_learned_mpc/results/mpc/acceptance.csv"/>
+ <node pkg="gem_learned_mpc" type="acceptance_logger.py" name="acceptance_logger" output="screen"><param name="output_csv" value="$(arg output_csv)"/></node>
+ <node pkg="gem_learned_mpc" type="rviz_validation_markers.py" name="rviz_validation_markers" output="screen"/>
+</launch>

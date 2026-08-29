@@ -1,0 +1,8 @@
+<launch>
+ <arg name="scenario" default="nominal"/>
+ <arg name="config" default="$(find gem_learned_mpc)/config/simulation_scenarios.yaml"/>
+ <arg name="target_speed_mps" default="2.0"/>
+ <arg name="output_csv" default="$(env HOME)/gem_ws/src/gem_learned_mpc/results/mpc/$(arg scenario).csv"/>
+ <node pkg="gem_learned_mpc" type="scenario_speed_override.py" name="scenario_speed_override" output="screen"><param name="target_speed_mps" value="$(arg target_speed_mps)"/></node>
+ <include file="$(find gem_learned_mpc)/launch/acceptance_monitor.launch"><arg name="output_csv" value="$(arg output_csv)"/></include>
+</launch>

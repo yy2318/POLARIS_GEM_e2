@@ -1,0 +1,13 @@
+{
+  "checks": {
+    "completion": true,
+    "cte_95pct": true,
+    "cte_rmse": true,
+    "finite": true,
+    "max_speed": true,
+    "solver_success": false,
+    "solver_time": true,
+    "transient_cte": true
+  },
+  "passed": false
+}

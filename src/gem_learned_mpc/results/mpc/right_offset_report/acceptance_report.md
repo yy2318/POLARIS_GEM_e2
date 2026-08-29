@@ -1,0 +1,30 @@
+# MPC Test and Acceptance Report
+
+Overall result: **FAIL**
+
+## Metrics
+- sample_count: 1001
+- cte_rmse_m: 0.49998863942941496
+- cte_mae_m: 0.4999886393888144
+- cte_max_m: 0.4999995744867201
+- cte_p95_m: 0.49999850002498686
+- samples_within_1m_pct: 100.0
+- max_speed_mps: 0.00012012872797895494
+- mean_solver_time_ms: 0.0
+- p95_solver_time_ms: 0.0
+- solver_success_pct: 0.0
+- solver_failure_count: 1001
+- path_completion_pct: 100.0
+- nan_or_inf_count: 0
+- fallback_count: 1001
+- speed_limit_mps: 5.5556
+
+## Checks
+- [x] max_speed
+- [x] cte_95pct
+- [x] transient_cte
+- [x] cte_rmse
+- [x] completion
+- [ ] solver_success
+- [x] solver_time
+- [x] finite
